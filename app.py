@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from utils import predict_drug_type
-
+import config
 app = Flask(__name__)
 
 # API for categorical column "Sex"
@@ -42,4 +42,4 @@ def homepage():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0',port=config.PORT_NUMBER,debug=False)
